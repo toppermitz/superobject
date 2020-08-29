@@ -6323,7 +6323,7 @@ function TSuperRttiContext.FromJson(TypeInfo: PTypeInfo; const obj: ISuperObject
     Guid : TGuid;
   begin
     Guid := GetTypeData(TypeInfo).Guid;
-    if CompareMem(Guid, @soguid, SizeOf(TGUID)) then
+    if CompareMem(@Guid, @soguid, SizeOf(TGUID)) then
     begin
       if obj <> nil then
         TValue.Make(@obj, TypeInfo, Value) else
